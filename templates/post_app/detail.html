@@ -1,0 +1,7 @@
+<h1>detail page</h1>
+<hr>
+{% if post.image %}
+ <img src="{{ post.image.url }}">
+{% endif %}
+<h4>タイトル：{{ post.title }}</h4>
+<p>内容：{{ post.text }}</p>
