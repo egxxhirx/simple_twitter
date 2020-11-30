@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'post_app',
     'django_cleanup',
     'bootstrap4',
+    'widget_tweaks',
+    'user_app',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+LOGIN_URL = 'user_app:login'
+LOGIN_REDIRECT_URL = 'post_app:index'
+LOGOUT_REDIRECT_URL = 'post_app:index'

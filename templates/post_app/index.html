@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>this is index.</h1>
+<h1>Tiemline</h1>
 
 {% for post in posts %}
 <a href="{% url 'post_app:detail' post_id=post.id %}">

@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>detail page</h1>
-<hr>
-{% if post.image %}
- <img src="{{ post.image.url }}">
-{% endif %}
-<h4>タイトル：{{ post.title }}</h4>
-<p>内容：{{ post.text }}</p>
-
+<h1>edit page</h1>
+<form method="POST" enctype="multipart/form-data">
+ {% csrf_token %}
+ {{ form.as_p }}
+ <button type="submit">編集する</button>
+</form>
 {% endblock %}
