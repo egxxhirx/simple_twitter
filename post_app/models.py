@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.db import models
-from django.utils import timezone #追加
+from django.contrib.auth import get_user_model
+from django.utils import timezone
 
 # Create your models here.
 class Tag(models.Model):
