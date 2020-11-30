@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'post_app'
+    'post_app',
+    'django_cleanup',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +66,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            ],
+             'builtins':[ 
+               'bootstrap4.templatetags.bootstrap4',
             ],
         },
     },

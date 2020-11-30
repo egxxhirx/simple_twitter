@@ -2,7 +2,7 @@
 {% block content %}
 <h1>this is index.</h1>
 
-{% for post in posts%}
+{% for post in posts %}
 <a href="{% url 'post_app:detail' post_id=post.id %}">
  {% if post.image %}
    <img src="{{ post.image.url }}">
