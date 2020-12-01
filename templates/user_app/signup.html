@@ -2,27 +2,31 @@
 {% load widget_tweaks %}
 {% block content %}
 <div class="container">
-  <div class="row col-md-6">
-    <h1 class="mt-5 pt-4 text-center">Signup</h1>
-  </div>
-  <div class="row col-md-6">
-  <form class="form-group w-100" method="post">
-    {% csrf_token %}
-    <label for="id_username" class="sr-only">タイトル</label>
-    <input type="text" name="username" placeholder="名前" maxlength="150" class="form-control mb-3" required id="id_username" autofocus>
 
-    <label for="id_email" class="sr-only">メールアドレス</label>
-    <input type="email" name="email" placeholder="メールアドレス" maxlength="254" class="form-control mb-3" required id="id_email">
+  <h3 class="mt-5 pt-4 text-center">新規登録</h3>
+  <div class="row d-flex flex-column align-items-center justify-content-center">
+    <div class="col-md-4 my-3">
+      <form class="form-group w-100" method="post">
+        {% csrf_token %}
+        <label for="id_username" class="sr-only">タイトル</label>
+        <input type="text" name="username" placeholder="名前" maxlength="150" class="form-control mb-3" required id="id_username" autofocus>
 
-    <label for="id_password1" class="sr-only">パスワード</label>
-    <input type="password" name="password1" placeholder="パスワード" autocomplete="new-password" class="form-control mb-3" id="id_password1">
+        <label for="id_email" class="sr-only">メールアドレス</label>
+        <input type="email" name="email" placeholder="メールアドレス" maxlength="254" class="form-control mb-3" required id="id_email">
 
-    <label for="id_password2" class="sr-only">パスワード(確認用)</label>
-    <input type="password" name="password2" placeholder="パスワード(確認用)" autocomplete="new-password" class="form-control mb-3" required id="id_password2">
+        <label for="id_password1" class="sr-only">パスワード</label>
+        <input type="password" name="password1" placeholder="パスワード" autocomplete="new-password" class="form-control mb-3" id="id_password1">
 
-    <button type="submit" class="btn btn-primary">Signup</button>
-  </form>
-    <p>既にアカウントをお持ちですか?? <a href="{% url 'user_app:login' %}">Login</a></p>
+        <label for="id_password2" class="sr-only">パスワード(確認用)</label>
+        <input type="password" name="password2" placeholder="パスワード(確認用)" autocomplete="new-password" class="form-control mb-3" required id="id_password2">
+        <div>
+          <button type="submit" class="btn btn-primary btn-block">登録</button>
+        </div>
+      </form>
+      <div class="text-center">
+        <a class="text-center" href="{% url 'user_app:login' %}">既にアカウントをお持ちの方</a>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
