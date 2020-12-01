@@ -2,11 +2,9 @@
 {% block content %}
 <h1>detail page</h1>
 <hr>
-<div c
 {% if post.image %}
  <img src="{{ post.image.url }}">
 {% endif %}
-<h4>タイトル：{{ post.title }}</h4>
 <p>内容：{{ post.text }}</p>
 <button class="btn btn-outline-info"><a href="{% url 'post_app:edit' post_id=post.id %}">編集</a></button>
 <button class="btn btn-outline-info"><a href="{% url 'post_app:delete' post_id=post.id %}">削除</a></button> 

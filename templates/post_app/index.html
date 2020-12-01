@@ -3,11 +3,12 @@
 <h1>Tiemline</h1>
 
 {% for post in posts %}
+<h3><a href="{% url 'user_app:detail' post.user.id %}">{{post.user.username}}</a></h3>
 <a href="{% url 'post_app:detail' post_id=post.id %}">
  {% if post.image %}
    <img src="{{ post.image.url }}">
  {% endif %}
-   <h5>{{post.title|truncatechars:13 | linebreaksbr}}</h5>
+ 
    <p>{{post.text}}</p>
 </a>
    <p>#{{post.tag}}</p>
