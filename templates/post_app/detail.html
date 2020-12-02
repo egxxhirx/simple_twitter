@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>detail page</h1>
-<hr>
-{% if post.image %}
- <img src="{{ post.image.url }}">
-{% endif %}
-<p>内容：{{ post.text }}</p>
-<button class="btn btn-outline-info"><a href="{% url 'post_app:edit' post_id=post.id %}">編集</a></button>
-<button class="btn btn-outline-info"><a href="{% url 'post_app:delete' post_id=post.id %}">削除</a></button> 
+<div class="mt-5 pt-5 row d-flex flex-column align-items-center justify-content-center">
+  <div class="col-md-7 my-3 text-left p-3">
+    <div class="mb-3">
+      <a href="{% url 'post_app:index' %}">＜ 戻る</a>
+    </div>
+    <p>{{ post.text }}</p>
+    {% if post.image %}
+    <div class="my-3">
+      <img src="{{ post.image.url }}" style="width: 100%; object-fit: cover; border-radius: 10px;">
+    </div>
+    {% endif %}
+    <p>#{{post.tag}}</p>
+    <p>{{post.created_at}}</p>
+    <div class="text-right">
+      <a class="text-danger" href="{% url 'post_app:delete' post_id=post.id %}">削除</a>
+    </div>
+  </div>
+</div>
 {% endblock %}

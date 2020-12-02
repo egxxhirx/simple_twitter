@@ -5,14 +5,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="description" content=""/>
-  <title>TimeLine</title>
+  <title>SIMPLE TWITTER</title>
 </head>
 <body>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="{% url 'post_app:index' %}">TimeLine</a>
+    <a class="navbar-brand" href="{% url 'post_app:index' %}">SIMPLE TWITTER</a>
   
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-md-0">
@@ -20,11 +20,13 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'user_app:edit' user_id=user.id %}">{{request.user.username}}</a>
         </li>
+      </ul>
+      <ul class="navbar-nav mr-0 mt-2 mt-md-0">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'post_app:add' %}">投稿</a>
+          <a class="nav-link" href="{% url 'post_app:add' %}">新規投稿</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'user_app:logout' %}">ログアウト</a>
+          <a class="nav-link text-danger" href="{% url 'user_app:logout' %}">ログアウト</a>
         </li>
         {% else %}
         <li class="nav-item">
@@ -38,7 +40,7 @@
       </ul>
     </div>
   </nav>
-  <div class="container">
+  <div class="container mt-5 pt-3">
     {% block content %}
     {% endblock %}
   </div>
