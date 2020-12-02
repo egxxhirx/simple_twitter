@@ -12,11 +12,10 @@
         <label for="id_text" class="sr-only">本文</label>
         <textarea type="text" name="text" placeholder="本文" cols="40" rows="10" class="form-control mb-3" required id="id_text"></textarea>
         <div class="d-flex justify-content-between"> 
-          <div class="mb-3 text-secondary">
-            <label>画像</label>
-                {{ form.image }}
-          </div>
-            
+        <div class="mb-3 text-secondary">
+          {{ form.image }}
+        </div>
+          
           <div class="mb-3">
             <label for="id_tag" class="sr-only">タグ</label>
             {{ form.tag|add_class:"custom-select" }}

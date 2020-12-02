@@ -8,7 +8,7 @@
   <div class="col-md-7 my-3 text-left p-3 border-bottom">
     <h4><a class="text-dark" href="{% url 'user_app:detail' post.user.id %}">{{post.user.username}}</a></h4>
     <a href="{% url 'post_app:detail' post_id=post.id %}">
-      <p class="text-dark">{{post.text}}</p>
+      <p class="text-secondary">{{post.text}}</p>
       {% if post.image %}
       <div class="my-3">
         <img src="{{ post.image.url }}"
@@ -16,8 +16,8 @@
       </div>
       {% endif %}
     </a>
-    <p>#{{post.tag}}</p>
-    <p>{{post.created_at}}</p>
+    <p class="text-secondary">#{{post.tag}}</p>
+    <p class="text-secondary">{{post.created_at}}</p>
   </div>
 </div>
 {% endfor %}
